@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload/download excel</title>
+</head>
+<body style="padding: 5px 50px">
+    <h3>upload excel file</h3>
+    <hr/>
+    <form action="/file/uploadExcel" method="post" enctype="multipart/form-data">
+        <!-- accept用来限制上传文件类型 -->
+        <!-- application/vnd.ms-excel：excel2003-2007(.xls格式) -->
+        <!-- application/vnd.openxmlformats-officedocument.spreadsheetml.sheet：excel2010以上(.xlsx格式) -->
+            <input type="file" name="file" accept="application/vnd.ms-excel,
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+        <button type="submit">上传</button>
+    </form>
+
+    <h3>download excel file</h3>
+    <hr/>
+    <button onclick="window.location.href='/file/downloadExcel'">chlic me to download!</button>
+</body>
+</html>
